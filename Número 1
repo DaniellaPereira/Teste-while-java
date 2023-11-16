@@ -1,0 +1,25 @@
+/**  Uma companhia de tecnologia deseja dar uma série de apresentações. Fatos:
+
+A direção calcula que praticando o preço de R$5,00 serão vendidos 120 ingressos
+As despesas são fixas em R$ 200,00.
+Ao diminuir R$ 0,50 do preço dos ingressos espera-se que as vendas aumentem em 26 ingressos. */
+
+import java.text.DecimalFormat;
+
+public class Main {
+    public static void main(String[] args) {
+        double preco_ingresso = 5.00;
+        int ingresso_total = 120;
+        int despesas = 200;
+
+        while (preco_ingresso > 1.00) {
+            preco_ingresso = preco_ingresso - 0.50;
+            ingresso_total = ingresso_total + 26;
+            double lucro = (preco_ingresso * ingresso_total) - despesas;
+            DecimalFormat df = new DecimalFormat("#.00");
+            System.out.println("Valor do ingresso : R$ " + df.format(preco_ingresso));
+            System.out.println("Quantidade de ingressos : " + ingresso_total);
+            System.out.println("O lucro de: R$ " + df.format(lucro) + "\n");
+        }
+    }
+}
