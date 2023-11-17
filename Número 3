@@ -1,0 +1,61 @@
+/**  Uma companhia de tecnologia, Open Tech, deseja realizar um evento. Fatos:
+
+- A direção calcula que praticando o preço de R$5,00 serão vendidos 120 ingressos
+- As despesas são fixas em R$ 200,00.
+- Ao diminuir R$ 0,50 do preço dos ingressos espera-se que as vendas aumentem em 26 ingressos. */
+
+/** Após a realização do evento a companhia de tecnologia gostaria de saber:
+ * - o total de pessoas por faixa etária presentes no evento */
+
+
+
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        double preco_ingresso = 5.00;
+        int ingresso_total = 120;
+        int despesas = 200;
+
+        
+        while (preco_ingresso > 1.00) {
+            preco_ingresso = preco_ingresso - 0.50;
+            ingresso_total = ingresso_total + 26;
+            double lucro = (preco_ingresso * ingresso_total) - despesas;
+            DecimalFormat df = new DecimalFormat("#.00");
+            System.out.println("\nValor do ingresso : R$ " + df.format(preco_ingresso));
+            System.out.println("Quantidade de ingressos : " + ingresso_total);
+            System.out.println("O lucro de: R$ " + df.format(lucro) + "\n");
+}   
+          {  
+           int num = 0;
+           int maior_18 = 0;
+           int menor_18 = 0;
+           int igual_18 = 0;
+            
+            Scanner scanner = new Scanner(System.in);
+            while (num < 3) {
+                System.out.print("Digite o nome da pessoa: ");
+                String nome = scanner.nextLine();
+                System.out.print("Digite a idade do(a) " + nome + ": ");
+                int idade = Integer.parseInt(scanner.nextLine());
+
+                if (idade > 18) {
+                    maior_18++;
+                } else if (idade < 18) {
+                    menor_18++;
+                } else {
+                    igual_18++;
+                }
+
+                num++;
+            }
+
+            System.out.println("Maiores que 18: " + maior_18);
+            System.out.println("Menores que 18: " + menor_18);
+            System.out.println("Igual a 18: " + igual_18); 
+            
+        }
+    }
+}
